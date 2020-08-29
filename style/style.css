@@ -1,0 +1,252 @@
+body {
+  font-family: "Roboto Slab", serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+p {
+  color: rgba(41, 41, 41, 1);
+  line-height: 1.6em;
+  word-break: break-word;
+}
+.container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  grid-template-areas:
+    "header"
+    "main"
+    "preview"
+    "footer";
+  justify-items: center;
+}
+header {
+  grid-area: header;
+  width: 100%;
+  background-color: #9aec1f;
+}
+.title {
+  padding-right: 0.5em;
+  padding-left: 0.5em;
+  text-align: center;
+}
+.flexbox-nav {
+  display: flex;
+  padding-left: 1em;
+  padding-right: 1em;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+nav ul {
+  list-style-type: none;
+  background-color: rgb(31, 29, 29);
+  margin: 0;
+  padding: 0.2em 0;
+}
+nav a {
+  color: white;
+  text-decoration: none;
+}
+nav li {
+  transition: all 0.2s ease-in-out;
+}
+nav li:hover {
+  transform: scale(1.1);
+}
+nav a:visited {
+  color: white;
+}
+main {
+  grid-area: main;
+  padding: 0 1.6em;
+  justify-self: center;
+  padding-bottom: 5em;
+}
+section {
+  grid-area: skills;
+}
+.preview {
+  grid-area: preview;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: 25% 15% 25% 35%;
+  grid-template-columns: 25% 25% 50%;
+  grid-gap: 0.1em;
+  grid-template-areas:
+    "title title title"
+    "icon date ..."
+    "icon text text"
+    "icon  text text";
+  justify-items: center;
+  align-items: flex-start;
+  border: 0.3em solid rgb(31, 29, 29);
+  width: 75%;
+  background-color: #701eebab;
+}
+
+.preview-link h3:hover {
+  transform: scale(1.1);
+}
+.preview-link:visited {
+  color: white;
+}
+.preview-link {
+  color: white;
+  background-color: rgb(31, 29, 29);
+  width: 100%;
+  grid-area: title;
+}
+.preview-title {
+  text-align: center;
+}
+.preview-icon {
+  grid-area: icon;
+  margin-top: 0.8em;
+  margin-right: 0.1em;
+}
+.preview-description {
+  grid-area: text;
+  color: black;
+  padding-right: 1em;
+}
+.preview-date {
+  grid-area: date;
+  font-size: 0.8em;
+  padding-top: 1.8em;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.616);
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 0.1em solid rgb(41, 37, 37);
+  width: 100%;
+}
+footer > * {
+  padding: 0 1em;
+}
+.copyright {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.425);
+}
+.social-link {
+  text-decoration: none;
+}
+.social li:hover {
+  transform: scale(1.1);
+}
+.social-link:visited {
+  color: black;
+}
+.skill-title {
+  grid-area: title;
+  width: 100%;
+  text-align: center;
+}
+.skill-container {
+  grid-area: skills;
+  display: grid;
+  grid-template-rows: repeat(4, 80px);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "title title title title"
+    "... logo1 name1 name1"
+    "... logo2 name2 name2"
+    "... logo3 name3 name3";
+  width: 75%;
+  grid-gap: 0.2em;
+  margin: 0em auto;
+  padding: 2.5em 0;
+}
+.skill1 {
+  grid-area: name1;
+}
+.skill2 {
+  grid-area: name2;
+}
+.skill3 {
+  grid-area: name3;
+}
+.skill-img1 {
+  grid-area: logo1;
+}
+.skill-img2 {
+  grid-area: logo2;
+}
+.skill-img3 {
+  grid-area: logo3;
+}
+.skill-img {
+  width: 60px;
+  height: auto;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 600px) {
+  .preview {
+    width: 75%;
+  }
+  article {
+    grid-area: article;
+    text-align: center;
+  }
+  article ul {
+    list-style-type: none;
+  }
+  .blog-article {
+    text-align: left;
+  }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 850px) {
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .flexbox-nav {
+    justify-content: flex-start;
+  }
+  nav a {
+    padding: 0 2em;
+  }
+  .title {
+    text-align: left;
+  }
+  article {
+    padding-bottom: 5em;
+  }
+  article h2 {
+    font-size: 2em;
+  }
+  main {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "article article"
+      "skills preview"
+      "skills preview";
+    padding-bottom: 15em;
+  }
+  .skill-container {
+    grid-template-areas:
+      "title title title title"
+      "logo1 name1 logo2 name2"
+      "... ... ... ..."
+      "logo3 name3 name3 ...";
+    padding: 0;
+  }
+  .skill-title {
+    margin-top: 0;
+  }
+  .skill-img {
+    width: 80px;
+    height: auto;
+  }
+}
