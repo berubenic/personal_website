@@ -89,6 +89,10 @@ footer > * {
 .social-link:visited {
   color: black;
 }
+img {
+  width: 300px;
+  padding: 4em 0;
+}
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 850px) {
@@ -104,5 +108,17 @@ footer > * {
   }
   .title {
     text-align: left;
+  }
+  main {
+    padding: 0 10em;
+  }
+  img {
+    width: 500px;
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    padding: 0 20em;
   }
 }
